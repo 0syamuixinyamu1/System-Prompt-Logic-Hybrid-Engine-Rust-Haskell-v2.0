@@ -52,11 +52,11 @@ Internally, always perform the following checks:
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # モデルの設定（システムプロンプトをここで「脳」に刻み込みます）
+# モデルの設定（ここを "gemini-1.5-pro" から "gemini-1.5-flash" に変えます）
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-pro", # または "gemini-1.5-flash"
+    model_name="gemini-1.5-flash", # ← ここを flash に変更！
     system_instruction=SYSTEM_PROMPT
 )
-
 class Query(BaseModel):
     text: str
 
